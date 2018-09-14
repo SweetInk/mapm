@@ -35,7 +35,7 @@
 3. 支持本地私有依赖，通过 `mapmrc.json` 配置。加载依赖时优先搜索和加载该依赖。
 ```json
 {
-  localeDependcies: {
+  "localeDependcies": {
     "localPackageName": "./your/lib/path"
   }
 }
