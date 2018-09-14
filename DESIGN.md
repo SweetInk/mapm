@@ -32,7 +32,16 @@
 	else DOWN_FROM_REMOTE(package)
 	```
 
-3. maven 之其他特点？还需要摸索。如何摸索？当然是玩几把 Java Project。 
+3. 支持本地私有依赖，通过 `mapmrc.json` 配置。加载依赖时优先搜索和加载该依赖。
+```json
+{
+  localeDependcies: {
+    "localPackageName": "./your/lib/path"
+  }
+}
+```
+
+4. maven 之其他特点？还需要摸索。如何摸索？当然是玩几把 Java Project。 
 
 ## Modifies
 Next, I will change some lines in following fake code: The major modifies in `LOAD_AS_DIRCTORY` method in fact. There is a important thing is the `require` function does not support `require('package', 'version')` like this, we got 'version' the only entry is from the dev/dependecies of project pacakge.json. How to impls require('package', 'version')? Overwrite the original native require function or have other ways?
